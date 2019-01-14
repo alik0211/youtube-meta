@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+> You **must** provide a key for the Google API in an environment variable `REACT_APP_GOOGLE_API_KEY`
+
 In the project directory, you can run:
 
 ### `npm start`

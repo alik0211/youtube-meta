@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 
-import App from './cmp-app';
+import Search from './cmp-search';
+
+import { getVideo } from '../../actions/videos';
 
 const mapStateToProps = (state, ownProps) => {
   return {};
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  getVideo
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Search);

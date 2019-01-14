@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import Search from './ui/search/cnt-search';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.initApp();
-  }
   render() {
     return (
-      <div className="App">App</div>
+      <div className="app">
+        <div className="app__search">
+          <Search />
+        </div>
+      </div>
     );
   }
 }

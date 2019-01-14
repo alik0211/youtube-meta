@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import app from './app';
+import videos from './videos';
 
 export default combineReducers({
-  app
+  videos
 });
