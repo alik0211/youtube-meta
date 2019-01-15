@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Search from './ui/search/cnt-search';
 
 class App extends Component {

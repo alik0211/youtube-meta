@@ -1,5 +1,4 @@
 import {
-  SET_VIDEO,
   GET_VIDEO_REQUEST,
   GET_VIDEO_SUCCESS,
   GET_VIDEO_FAILURE
@@ -12,26 +11,19 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SET_VIDEO:
-      return {
-        ...state,
-        currentVideo: action.payload.id
-      };
-
     case GET_VIDEO_SUCCESS:
+      const video = action.payload;
+
       return {
         ...state,
         collection: {
           ...state.collection,
-          ...action.payload.items.reduce((accumulator, item) => {
-            return {
-              ...accumulator,
-              [item.id]: item
-            };
-          }, {})
-        }
+          [video.id]: video
+        },
+        currentVideo: video.id
       };
 
+    case GET_VIDEO_FAILURE:
     default:
       return state;
   }

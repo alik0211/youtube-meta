@@ -2,7 +2,8 @@ import React from 'react';
 
 class Search extends React.Component {
   state = {
-    searchString: ''
+    searchString: '',
+    error: null
   };
   handleChange = event => {
     this.setState({
@@ -12,17 +13,32 @@ class Search extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    this.props.getVideo(this.state.searchString);
+    this.setState({
+      error: null
+    });
+
+    this.props.getVideo(this.state.searchString).then(action => {
+      if (action.error) {
+        this.setState({
+          error: action.payload.message
+        });
+      }
+
+      return action;
+    });
   };
   render() {
+    const { error, searchString } = this.state;
+
     return (
       <div className="search">
+        {error && <p>{error}</p>}
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             placeholder="Video id. E.g.: SXiSVQZLje8"
             onChange={this.handleChange}
-            value={this.state.searchString}
+            value={searchString}
           />
           <button type="submit">Search</button>
         </form>
