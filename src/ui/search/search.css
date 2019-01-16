@@ -33,6 +33,11 @@
   background-color: #1565c0;
 }
 
+.search__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
 .search__error {
   display: flex;
   align-items: center;

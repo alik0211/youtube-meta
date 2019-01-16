@@ -6,11 +6,18 @@ import {
 
 const initialState = {
   collection: {},
-  currentVideo: null
+  currentVideo: null,
+  isFetched: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case GET_VIDEO_REQUEST:
+      return {
+        ...state,
+        isFetched: true
+      };
+
     case GET_VIDEO_SUCCESS:
       const video = action.payload;
 
@@ -20,10 +27,16 @@ export default function(state = initialState, action) {
           ...state.collection,
           [video.id]: video
         },
-        currentVideo: video.id
+        currentVideo: video.id,
+        isFetched: false
       };
 
     case GET_VIDEO_FAILURE:
+      return {
+        ...state,
+        isFetched: false
+      };
+
     default:
       return state;
   }

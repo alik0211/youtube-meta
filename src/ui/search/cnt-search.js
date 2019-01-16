@@ -5,7 +5,9 @@ import Search from './cmp-search';
 import { getVideo } from '../../actions/videos';
 
 const mapStateToProps = (state, ownProps) => {
-  return {};
+  return {
+    isFetched: state.videos.isFetched
+  };
 };
 
 const mapDispatchToProps = {

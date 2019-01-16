@@ -31,6 +31,7 @@ class Search extends React.Component {
   };
   render() {
     const { error, searchString } = this.state;
+    const { isFetched } = this.props;
 
     return (
       <div className="search">
@@ -42,9 +43,14 @@ class Search extends React.Component {
               onChange={this.handleChange}
               value={searchString}
               className="search__input"
+              disabled={isFetched}
               autoFocus
             />
-            <button type="submit" className="search__button">
+            <button
+              type="submit"
+              className="search__button"
+              disabled={isFetched}
+            >
               Search
             </button>
             {!!error && <div className="search__error">{error}</div>}
