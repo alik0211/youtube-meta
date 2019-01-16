@@ -1,3 +1,9 @@
+# YouTube Meta
+
+[![Travis](https://img.shields.io/travis/com/alik0211/youtube-meta/master.svg?style=flat-square)](https://travis-ci.com/alik0211/youtube-meta)
+[![Dependency Status](https://img.shields.io/david/alik0211/youtube-meta.svg?label=deps&style=flat-square)](https://david-dm.org/alik0211/youtube-meta)
+[![devDependency Status](https://img.shields.io/david/dev/alik0211/youtube-meta.svg?label=devDeps&style=flat-square)](https://david-dm.org/alik0211/youtube-meta?type=dev)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
