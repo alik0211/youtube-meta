@@ -1,4 +1,5 @@
 import React from 'react';
+import { keyIsIgnored, getHandlerFromKey } from '../../helpers/video';
 
 import './info.css';
 
@@ -17,26 +18,20 @@ class Info extends React.Component {
         <div className="info__inner">
           <table className="info__table">
             <tbody className="info__tbody">
-              <tr className="info__item">
-                <td className="info__item-name">Title</td>
-                <td className="info__item-value">{snippet.title}</td>
-              </tr>
-              <tr className="info__item">
-                <td className="info__item-name">Published at</td>
-                <td className="info__item-value">
-                  {new Date(snippet.publishedAt).toLocaleString()}
-                </td>
-              </tr>
-              <tr className="info__item">
-                <td className="info__item-name">Audio language</td>
-                <td className="info__item-value">
-                  {snippet.defaultAudioLanguage}
-                </td>
-              </tr>
-              <tr className="info__item">
-                <td className="info__item-name">Tags</td>
-                <td className="info__item-value">{snippet.tags.join(', ')}</td>
-              </tr>
+              {Object.keys(snippet).map(key => {
+                if (keyIsIgnored(key)) {
+                  return null;
+                }
+
+                return (
+                  <tr className="info__item" key={key}>
+                    <td className="info__item-name">{key}</td>
+                    <td className="info__item-value">
+                      {getHandlerFromKey(key)(snippet[key])}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
