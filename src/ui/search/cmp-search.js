@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './search.css';
+
 class Search extends React.Component {
   state = {
     searchString: '',
@@ -32,16 +34,21 @@ class Search extends React.Component {
 
     return (
       <div className="search">
-        {error && <p>{error}</p>}
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Video id. E.g.: SXiSVQZLje8"
-            onChange={this.handleChange}
-            value={searchString}
-          />
-          <button type="submit">Search</button>
-        </form>
+        <div className="search__inner">
+          <form onSubmit={this.handleSubmit} className="search__form">
+            <input
+              type="text"
+              placeholder="Video id. E.g.: SXiSVQZLje8"
+              onChange={this.handleChange}
+              value={searchString}
+              className="search__input"
+            />
+            <button type="submit" className="search__button">
+              Search
+            </button>
+            {!!error && <div className="search__error">{error}</div>}
+          </form>
+        </div>
       </div>
     );
   }

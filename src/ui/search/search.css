@@ -1,0 +1,38 @@
+.search__inner {
+  width: 960px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.search__form {
+  display: flex;
+}
+
+.search__input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.search__button {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-left: 4px;
+  background-color: rgb(22, 107, 198);
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+}
+
+.search__button:hover {
+  background-color: #1565c0;
+}
+
+.search__error {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  color: #b94a48;
+}
