@@ -42,6 +42,7 @@ class Search extends React.Component {
               onChange={this.handleChange}
               value={searchString}
               className="search__input"
+              autoFocus
             />
             <button type="submit" className="search__button">
               Search
