@@ -49,6 +49,9 @@ class Search extends React.Component {
             </button>
             {!!error && <div className="search__error">{error}</div>}
           </form>
+          <a href="#" className="search__github">
+            GitHub
+          </a>
         </div>
       </div>
     );
