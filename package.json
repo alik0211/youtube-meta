@@ -2,6 +2,7 @@
   "name": "youtube-meta",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alik0211.github.io/youtube-meta/",
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
