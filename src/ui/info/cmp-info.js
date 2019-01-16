@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './info.css';
+
 class Info extends React.Component {
   render() {
     const { video } = this.props;
@@ -12,30 +14,32 @@ class Info extends React.Component {
 
     return (
       <div className="info">
-        <table className="info__table">
-          <tbody className="info__tbody">
-            <tr className="info__item">
-              <td className="info__item-name">Title</td>
-              <td className="info__item-value">{snippet.title}</td>
-            </tr>
-            <tr className="info__item">
-              <td className="info__item-name">Published at</td>
-              <td className="info__item-value">
-                {new Date(snippet.publishedAt).toLocaleString()}
-              </td>
-            </tr>
-            <tr className="info__item">
-              <td className="info__item-name">Audio language</td>
-              <td className="info__item-value">
-                {snippet.defaultAudioLanguage}
-              </td>
-            </tr>
-            <tr className="info__item">
-              <td className="info__item-name">Tags</td>
-              <td className="info__item-value">{snippet.tags.join(', ')}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="info__inner">
+          <table className="info__table">
+            <tbody className="info__tbody">
+              <tr className="info__item">
+                <td className="info__item-name">Title</td>
+                <td className="info__item-value">{snippet.title}</td>
+              </tr>
+              <tr className="info__item">
+                <td className="info__item-name">Published at</td>
+                <td className="info__item-value">
+                  {new Date(snippet.publishedAt).toLocaleString()}
+                </td>
+              </tr>
+              <tr className="info__item">
+                <td className="info__item-name">Audio language</td>
+                <td className="info__item-value">
+                  {snippet.defaultAudioLanguage}
+                </td>
+              </tr>
+              <tr className="info__item">
+                <td className="info__item-name">Tags</td>
+                <td className="info__item-value">{snippet.tags.join(', ')}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
