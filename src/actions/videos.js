@@ -17,7 +17,7 @@ export const getVideo = id => dispatch => {
         const json = await response.json();
 
         if (json.items.length === 0) {
-          throw new ApiError(404, 'The video is not found');
+          throw new ApiError(404, `No video found with "${id}" id`);
         }
 
         return new Response(JSON.stringify(json.items[0]), {
