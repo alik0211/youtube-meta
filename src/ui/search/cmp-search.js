@@ -1,4 +1,5 @@
 import React from 'react';
+import { getVideoIdFromString } from '../../helpers/video';
 
 import './search.css';
 
@@ -19,15 +20,17 @@ class Search extends React.Component {
       error: null
     });
 
-    this.props.getVideo(this.state.searchString).then(action => {
-      if (action.error) {
-        this.setState({
-          error: action.payload.message
-        });
-      }
+    this.props
+      .getVideo(getVideoIdFromString(this.state.searchString))
+      .then(action => {
+        if (action.error) {
+          this.setState({
+            error: action.payload.message
+          });
+        }
 
-      return action;
-    });
+        return action;
+      });
   };
   render() {
     const { error, searchString } = this.state;
@@ -39,7 +42,7 @@ class Search extends React.Component {
           <form onSubmit={this.handleSubmit} className="search__form">
             <input
               type="text"
-              placeholder="Video id. E.g.: SXiSVQZLje8"
+              placeholder="Video url or id"
               onChange={this.handleChange}
               value={searchString}
               className="search__input"
