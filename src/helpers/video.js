@@ -23,17 +23,15 @@ export function keyIsIgnored(key) {
   return ignoredKeys.includes(key);
 }
 
-export function getHandlerFromKey(key) {
-  const handlers = {
-    publishedAt(value) {
+export function getProcessedValueBasedKey(key, value) {
+  switch (key) {
+    case 'publishedAt':
       return new Date(value).toLocaleString();
-    },
-    tags(value) {
+
+    case 'tags':
       return value.join(', ');
-    }
-  };
 
-  const defaultHandler = value => value;
-
-  return key in handlers ? handlers[key] : defaultHandler;
+    default:
+      return value;
+  }
 }

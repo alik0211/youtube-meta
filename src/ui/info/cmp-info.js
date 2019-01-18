@@ -1,5 +1,5 @@
 import React from 'react';
-import { keyIsIgnored, getHandlerFromKey } from '../../helpers/video';
+import { keyIsIgnored, getProcessedValueBasedKey } from '../../helpers/video';
 
 import './info.css';
 
@@ -27,7 +27,7 @@ class Info extends React.Component {
                   <tr className="info__item" key={key}>
                     <td className="info__item-name">{key}</td>
                     <td className="info__item-value">
-                      {getHandlerFromKey(key)(snippet[key])}
+                      {getProcessedValueBasedKey(key, snippet[key])}
                     </td>
                   </tr>
                 );
