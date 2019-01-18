@@ -4,7 +4,9 @@ node_js:
 
 cache: yarn
 
-script: "yarn build"
+script:
+  - yarn test
+  - yarn build
 
 deploy:
   provider: pages
