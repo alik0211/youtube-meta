@@ -1,5 +1,7 @@
 import { RSAA, ApiError } from 'redux-api-middleware';
 
+import { getCategory } from './categories';
+
 export const GET_VIDEO_REQUEST = 'GET_VIDEO_REQUEST';
 export const GET_VIDEO_SUCCESS = 'GET_VIDEO_SUCCESS';
 export const GET_VIDEO_FAILURE = 'GET_VIDEO_FAILURE';
@@ -27,5 +29,11 @@ export const getVideo = id => dispatch => {
         });
       }
     }
+  }).then(action => {
+    const { categoryId } = action.payload.snippet;
+
+    dispatch(getCategory(categoryId));
+
+    return action;
   });
 };

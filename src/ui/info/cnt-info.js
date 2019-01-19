@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Info from './cmp-info';
 
 const mapStateToProps = (state, ownProps) => {
-  const { collection, currentVideo } = state.videos;
+  const { collection: videos, currentVideo } = state.videos;
+  const { collection: categories } = state.categories;
 
   if (!currentVideo) {
     return {
@@ -11,8 +12,21 @@ const mapStateToProps = (state, ownProps) => {
     };
   }
 
+  let video = videos[currentVideo];
+  const { categoryId } = video.snippet;
+
+  if (categoryId in categories) {
+    video = {
+      ...video,
+      snippet: {
+        ...video.snippet,
+        category: categories[categoryId].snippet.title
+      }
+    };
+  }
+
   return {
-    video: collection[currentVideo]
+    video
   };
 };
 
