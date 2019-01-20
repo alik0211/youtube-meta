@@ -30,6 +30,10 @@ export const getVideo = id => dispatch => {
       }
     }
   }).then(action => {
+    if (action.error) {
+      return action;
+    }
+
     const { categoryId } = action.payload.snippet;
 
     dispatch(getCategory(categoryId));
