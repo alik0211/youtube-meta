@@ -1,10 +1,7 @@
 .search__inner {
   width: 960px;
   margin: 0 auto;
-  padding: 20px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 16px 10px;
 }
 
 .search__form {
@@ -43,11 +40,4 @@
   align-items: center;
   margin-left: 8px;
   color: #b94a48;
-}
-
-.search__github {
-  width: 24px;
-  height: 24px;
-  font-size: 0;
-  background-image: url('../../assets/icons/github.svg');
 }
