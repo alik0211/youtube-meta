@@ -1,10 +1,13 @@
 .info__inner {
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .info__table {
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
@@ -19,9 +22,10 @@
 .info__item-value {
   padding: 8px 12px;
   vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .info__item-name {
-  width: 15%;
   border-right: 1px solid #cbcbcb;
 }

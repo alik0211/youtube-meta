@@ -8,6 +8,10 @@
   flex: 1 0 auto;
 }
 
+.app__info {
+  margin-bottom: 16px;
+}
+
 .app__footer {
   flex: 0 0 auto;
 }

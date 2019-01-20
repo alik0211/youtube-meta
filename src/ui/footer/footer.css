@@ -3,8 +3,10 @@
 }
 
 .footer__inner {
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   padding: 16px 10px;
   text-align: right;
+  box-sizing: border-box;
 }
