@@ -23,6 +23,12 @@ describe('getVideoIdFromString', () => {
     expect(getVideoIdFromString(`https://youtu.be/${videoId}`)).toBe(videoId);
   });
 
+  test('if an unknown site is passed, return the original value', () => {
+    expect(getVideoIdFromString('https://example.com/')).toBe(
+      'https://example.com/'
+    );
+  });
+
   test('if no site is passed, the original value is returned', () => {
     expect(getVideoIdFromString(videoId)).toBe(videoId);
   });
