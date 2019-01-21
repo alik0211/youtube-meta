@@ -13,6 +13,12 @@ describe('getVideoIdFromString', () => {
     ).toBe(videoId);
   });
 
+  test('if you pass the m.youtube.com returns the value of the parameter "v"', () => {
+    expect(
+      getVideoIdFromString(`https://m.youtube.com/watch?v=${videoId}`)
+    ).toBe(videoId);
+  });
+
   test('if you pass the youtu.be returns the path', () => {
     expect(getVideoIdFromString(`https://youtu.be/${videoId}`)).toBe(videoId);
   });

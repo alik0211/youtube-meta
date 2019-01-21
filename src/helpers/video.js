@@ -3,7 +3,7 @@ export function getVideoIdFromString(string) {
     const url = new URL(string);
     const { hostname } = url;
 
-    if (hostname === 'www.youtube.com') {
+    if (['www.youtube.com', 'm.youtube.com'].includes(hostname)) {
       return url.searchParams.get('v');
     }
 
