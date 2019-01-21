@@ -49,6 +49,12 @@ describe('keyIsIgnored', () => {
 });
 
 describe('getProcessedValueBasedKey', () => {
+  test('return the formatted date if passed to publishedAt', () => {
+    expect(
+      getProcessedValueBasedKey('publishedAt', '2019-01-10T09:00:00.000Z')
+    ).toBe('1/10/2019, 1:00:00 PM');
+  });
+
   test('for the key tags returns a string from the glued array', () => {
     expect(getProcessedValueBasedKey('tags', ['a', 'b'])).toBe('a, b');
   });

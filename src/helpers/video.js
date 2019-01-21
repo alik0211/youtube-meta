@@ -26,7 +26,7 @@ export function keyIsIgnored(key) {
 export function getProcessedValueBasedKey(key, value) {
   switch (key) {
     case 'publishedAt':
-      return new Date(value).toLocaleString();
+      return new Date(value).toLocaleString('en-US');
 
     case 'tags':
       return value.join(', ');
