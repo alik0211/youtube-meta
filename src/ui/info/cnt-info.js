@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     video = {
       ...video,
       snippet: {
+        id: video.id,
         ...video.snippet,
         category: categories[categoryId].snippet.title
       }
