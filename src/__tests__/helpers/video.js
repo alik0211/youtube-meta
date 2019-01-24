@@ -35,8 +35,7 @@ describe('getVideoIdFromString', () => {
 });
 
 describe('keyIsIgnored', () => {
-  test('ignoring description, thumbnails, localized keys', () => {
-    expect(keyIsIgnored('description')).toBe(true);
+  test('ignoring thumbnails, localized keys', () => {
     expect(keyIsIgnored('thumbnails')).toBe(true);
     expect(keyIsIgnored('localized')).toBe(true);
   });
